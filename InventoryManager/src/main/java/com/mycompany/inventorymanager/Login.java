@@ -29,18 +29,6 @@ public class Login extends JPanel implements ActionListener {
 
     private static List<User> users = new ArrayList<>();
 
-    private static class User {
-        private String username;
-        private String password;
-
-        public User(String username, String password) {
-            this.username = username;
-            this.password = password;
-        }
-        public String getUsername() { return username; }
-        public String getPassword() { return password; }
-    }
-
     public Login(JFrame parentFrame, CardLayout cardLayout, JPanel mainContentPanel) {
         this.parentFrame = parentFrame;
         this.cardLayout = cardLayout;
@@ -175,7 +163,7 @@ public class Login extends JPanel implements ActionListener {
 
         for (User user : users) {
             if (user.getUsername().equalsIgnoreCase(username)) {
-                JOptionPane.showMessageDialog(this, "Username already exists. Please choose another.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Username already exists. Please input again.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
